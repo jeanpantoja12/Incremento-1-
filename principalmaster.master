@@ -1,0 +1,617 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="principalmaster.master.cs" Inherits="principalmaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <asp:ContentPlaceHolder ID="title" runat="server">
+
+    </asp:ContentPlaceHolder>
+    <meta name="description" content="We sell alpaca products at wholesale prices such as alpaca hats, alpaca socks, alpaca toys and Alpaca Fur accessories, we work with more than 30 artisans all around Peru. We aim to show the art we have inherited from our grandparents and they have received from theirs." />
+    <meta name="keywords" content="alpaca socks, alpaca toys, alpaca fur accessories, alpaca fur animals, alpaca home decor, 
+        alpaca andean, alpaca premium, alpaca scarves, alpaca hat, alpaca chullo, alpaca gloves, alpaca fur headwear, 
+        alpaca teddy bears, alpaca pillow, alpaca rug, alpaca throws, alpaca finger puppets, alpaca keychain" />
+    <%--<title>Artvus</title>--%>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet"/>
+    <link href="css/font-awesome.css" rel="stylesheet"/>
+    <%--<link href="css/docs.css" rel="stylesheet"/>--%>
+    <link href="css/bootstrap-social.min.css" rel="stylesheet"/>
+    <%--<link href="css/estilos.css" rel="stylesheet"/>--%>
+    <link href="css/estilosmaster.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Pangolin" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/loginmodal.min.css"/>
+    <link rel="icon" href="img/favicon-logo-artvus.png" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300i,400i" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/symbolcoin.css" />
+    <style>
+        #caja{
+	        width: 100%;
+	        margin: auto;
+	        height: 0px;
+	        background: #000;
+	        box-shadow: 10px 10px 3px #D8D8D8;
+	        transition: height .4s;
+        }
+    </style>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86608003-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-86608003-1');
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header>
+            <%--<nav class="navbar navbar-default container">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="#">
+                    <img alt="Brand" src="...">
+                  </a>
+                </div>
+              </div>
+            </nav>--%>
+
+            
+
+
+
+
+            <nav class="navbar container box">
+                <div class="container">
+                    <div class="navbar-header">
+                      <button type="button" style="border-color:#ddd" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar" style="background-color:#888"></span>
+                        <span class="icon-bar" style="background-color:#888"></span>
+                        <span class="icon-bar" style="background-color:#888"></span>
+                      </button>
+                        <div class="logo"">
+                            <a class="navbar-brand" href="/"><img src="../../../img/logoagara.jpg" alt="Logo_Artvus" /></a>
+                            <p class="leyend"></p>
+                        </div>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    
+
+                    <div class="menu">
+                        <ul class="navigation menu_level-1">
+                            <li id="liloginmobile" class="loginmobile" runat="server"><a class=" menu__link level-1" href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
+                            <li id="liregistermobile" class="loginmobile" runat="server"><a class="menu__link level-1" href="registerform.aspx" target="_blank"><i class="fa fa-user-plus" aria-hidden="true"></i> Regisrar</a></li>
+                            <li><a href="../../../c/Product-category/new/1" class="menu__link level-1">Nuevos</a></li>
+                            <li><a href="../../../c/Product-category/onsale/2" class="menu__link level-1">En venta</a></li>
+                            <%--<li><a href="productcategory.aspx?categoryfixed=1" class="menu__link level-1">New</a></li>
+                            <li><a href="productcategory.aspx?categoryfixed=2" class="menu__link level-1">On Sale</a></li>--%>
+
+                            <%--<li><a href="productcategory.aspx?categoryfixed=3">Collecciones</a></li>--%>
+                            <asp:PlaceHolder ID="placeholder_menu" runat="server"></asp:PlaceHolder>
+                            <%--<li><a href="#" menu__link level-1>Aptares</a></li>
+                            <li><a href="#" class="menu__link level-1">Socks</a></li>
+                            <li><a href="#" class="menu__link level-1">Accesories</a></li>
+                            <li><a href="#" class="menu__link level-1">Toys</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle menu__link level-1" data-toggle="dropdown" aria-expanded="false">Collections <span class="caret"></span></a>
+                                <ul class="dropdown-menu menu_level-2">
+                                    <li><a href="#" menu__link level-2>AW 2017</a></li>
+                                    <li><a href="#" menu__link level-2>CLASSIC</a></li>
+                                    <li><a href="#" menu__link level-2>AW 2018</a></li>
+                                </ul>
+                            </li>--%>
+                            <%--<li class="dropdown">
+                                <a href="detailproduct.aspx" class="dropdown-toggle disabled"  role="button" aria-haspopup="true" aria-expanded="false">Others <span class="caret"></span></a>
+                                <ul class="dropdown-menu menu_level-2">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">One more separated</a></li>
+                                </ul>
+                            </li>--%>
+                        </ul>
+                    </div>
+                
+                    <%--<div class="socialbutton">
+                        <a href="#" class="btn btn-social-icon btn-sm btn-facebook" style="border-radius:50%">
+                            <span class="fa fa-facebook"></span>
+                        </a>
+                        <a href="#" class="btn btn-social-icon btn-sm btn-twitter" style="border-radius:50%">
+                            <span class="fa fa-twitter"></span>
+                        </a>
+                        <a href="#" class="btn btn-social-icon btn-sm btn-pinterest" style="border-radius:50%">
+                            <span class="fa fa-pinterest"></span>
+                        </a>
+                        <a href="#" class="btn btn-social-icon btn-sm btn-instagram" style="border-radius:50%">
+                            <span class="fa fa-instagram"></span>
+                        </a>
+                        <a href="#" class="btn btn-social-icon btn-sm btn-whatsapp" style="border-radius:50%">
+                            <span class="fa fa-whatsapp"></span>
+                        </a>
+                        <a href="#" class="btn btn-social-icon btn-sm btn-pinterest" style="border-radius:50%">
+                            <span class="fa fa-youtube-play"></span>
+                        </a>
+                    </div>--%>
+                
+                    
+                    
+                    </div>
+                    <div class="container-cart-user">
+                        
+                    <div id="cart-js" class="cart" onmouseover="showcart()" onmouseout="hidecart()">
+                        <a class="cart-total" style="font-family: 'Lato', sans-serif;font-weight:400"  id="carttotal" runat="server"><asp:PlaceHolder ID="plsubtotal1" runat="server"></asp:PlaceHolder> <span class="fa fa-shopping-bag iconshop" aria-hidden="true" style="color:#a68845"></span></a>
+                        <%--<asp:LinkButton ID="btnshoppingcart" runat="server" OnClick="btnshoppingcart_Click">CART / $0.00 <span class="fa fa-shopping-bag" aria-hidden="true" style="color:#a68845"></span></asp:LinkButton>--%>
+                            <div id="detailcart-js" class="detailcart-master">
+                            <table class="preview-shopcart">
+                                <thead class="fixed-title">
+                                    <tr id="trheadprev" runat="server">
+                                        <th>Product</th>
+                                        <th></th>
+                                        <th>Quantity</th>
+                                        <th>Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbodystyle" class="scroll-content" runat="server">
+                                    <asp:PlaceHolder ID="plpreviewcart" runat="server"></asp:PlaceHolder>
+                                    <%--<tr>
+                                        <td>
+                                            <div class="image">
+                                                <img src="img/alpaca12.jpg" alt="" />
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="name">
+                                                <h3>SQUARES & WEAVES WIDE SCARF</h3>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="quantity">
+                                                <p class="qhide">1000</p>
+                                                <input type="number" value="1000" class="qshow" style="width:100%;text-align:center;display:none" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" />
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="price-item">
+                                                <p>$1000.00</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <div class="image">
+                                                <img src="img/alpaca13.jpg" alt="" />
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="name">
+                                                <h3>BROWN BABY ALPACA SCARF FOR GIFTS</h3>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="quantity">
+                                                <p>1000</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="price-item">
+                                                <p>$1000.00</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="image">
+                                                <img src="img/alpaca14.jpg" alt="" />
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="name">
+                                                <h3>MULTI JACQUARD MITTENS</h3>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="quantity">
+                                                <p>1000</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="price-item">
+                                                <p>$1000.00</p>
+                                            </div>
+                                        </td>
+                                    </tr>--%>
+                                </tbody>
+                            </table>
+
+                            <div class="preview-footer" id="prevfooter" runat="server">
+                                <label class="totalprice-master">TOTAL: <asp:PlaceHolder ID="plsubtotal2" runat="server"></asp:PlaceHolder>
+                                </label>
+                                <%--<label class="totalprice-master">TOTAL: <span>$100.00</span></label>--%>
+                                <%--<asp:LinkButton ID="btngocart" class="btn btn-danger" runat="server">Go to shopping cart</asp:LinkButton>--%>
+                                <a href="../../../shopping-cart-Step-1" class="btn btn-danger">Go to shopping cart</a>
+                            </div>
+                        </div>
+                    </div>
+                        <%-- Account for mobile --%>
+                        <a class="myaccountmobile" id="accountmobile" visible="false" href="#" onclick="divLoginMobile()" runat="server"><i class="fa fa-user-circle" aria-hidden="true"></i></a>
+                        <div id="settingmobile" class="setting-master">
+                            <p class="myprofile-setting setting"><a href="../../../my-profile">My Profile</a></p>
+                            <p class="orderhistory-setting setting"><a href="../../../order-history">Order History</a></p>
+                            <p class="favorites-setting setting"><a href="../../../favorite-products">Favorites</a></p>
+                            <p class="setting"><asp:LinkButton ID="btnlogoutmobile" class="logout-master" runat="server" OnClick="btnlogoutmaster_Click">Logout</asp:LinkButton></p>                            
+                        </div>
+                    </div>
+                    <div class="account">
+                        <div class="socialbutton">
+                            <asp:PlaceHolder ID="plsocialnetwork" runat="server"></asp:PlaceHolder>
+                           <%-- <a href="https://www.facebook.com/Artvus/" target="_blank" class="btn btn-social-icon btn-sm btn-facebook" style="border-radius:50%">
+                                <span class="fa fa-facebook"></span>
+                            </a>
+                            <a href="https://twitter.com/artvusofficial" target="_blank" class="btn btn-social-icon btn-sm btn-twitter" style="border-radius:50%">
+                                <span class="fa fa-twitter"></span>
+                            </a>
+                            <a href="https://www.pinterest.com/ArtvusOfficial/" target="_blank" class="btn btn-social-icon btn-sm btn-pinterest" style="border-radius:50%">
+                                <span class="fa fa-pinterest"></span>
+                            </a>
+                            <a href="#" class="btn btn-social-icon btn-sm btn-instagram" style="border-radius:50%">
+                                <span class="fa fa-instagram"></span>
+                            </a>
+                            <a href="#" class="btn btn-social-icon btn-sm btn-whatsapp" style="border-radius:50%">
+                                <span class="fa fa-whatsapp"></span>
+                            </a>
+                            <a href="#" class="btn btn-social-icon btn-sm btn-pinterest" style="border-radius:50%">
+                                <span class="fa fa-youtube-play"></span>
+                            </a>--%>
+                            
+                        </div>
+                        <div class="onlydesktop">
+                            <a id="linklogin" href="#" visible="false" class="login-master" data-toggle="modal" data-target="#myModal" runat="server">Login</a>
+                            <a id="linkregister" visible="false" href="register" target="_blank" runat="server">Registrar</a>
+
+                            <label id="lblbienvenido" visible="false" class="" runat="server">Welcome</label>
+                            <a id="linkusername" class="username-master" visible="false" runat="server"> <i class="fa fa-user" aria-hidden="true"></i> <asp:PlaceHolder ID="plusername" runat="server"></asp:PlaceHolder></a>
+                            <a id="myaccount" class="myaccount" onclick="divLogin()" visible="false" runat="server"><i class="fa fa-cog" aria-hidden="true"></i> My Account</a>
+                            <div id="setting" class="setting-master">
+                                <p class="myprofile-setting setting"><a href="../../../my-profile">My Profile</a></p>
+                                <p class="orderhistory-setting setting"><a href="../../../order-history">Order History</a></p>
+                                <p class="favorites-setting setting"><a href="../../../favorite-products">Favorites</a></p>
+                            </div>
+                            <asp:LinkButton ID="btnlogout" class="logout-master" Visible="false" runat="server" OnClick="btnlogoutmaster_Click"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</asp:LinkButton>
+                            
+                            <a class="link_search" onclick="divSearch('txtsearch')"><span class="fa fa-search"></span></a>
+                            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                            <asp:UpdatePanel id="UpdatePanel3" runat="server">
+                            <ContentTemplate>
+                            <fieldset style="border:none">
+
+                            <div id="globalsearch" class="setting-master container_search">
+                                <div class="input-group input-group-sm" style="width:200px">
+                                    <asp:TextBox ID="txtsearch" class="form-control" placeholder="Search" runat="server"></asp:TextBox>                                
+                                    <span class="input-group-btn">
+                                        <asp:LinkButton ID="btnsearch" class="btn btn-info btn-flat" runat="server" OnClick="btnsearch_Click"><i class="fa fa-search" aria-hidden="true"></i></asp:LinkButton>
+                                    </span>                                   
+                                </div>
+                            </div>
+
+                            </fieldset>
+                            </ContentTemplate>
+                            <%--<Triggers>            
+                                <asp:PostBackTrigger ControlID="lblalertlogin" />
+                            </Triggers>--%>
+                            </asp:UpdatePanel>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            
+        </header>
+        <!-- Modal Login-->
+        
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog logincontent" role="document">
+            <div class="modal-content login">
+                <div class="loginform">
+                    <h2>Login</h2>
+                    <%--<input type="text" value="" class="form-control formlog" placeholder="Username"/>--%>
+                    <asp:TextBox ID="txtusername" type="text" class="form-control formlog" placeholder="Username" runat="server"></asp:TextBox>
+                    <%--<input type="password" value="" class="form-control formlog" placeholder="Password"/>--%>
+                    <asp:TextBox ID="txtpassword" type="password" class="form-control formlog" placeholder="Password" runat="server"></asp:TextBox>
+                    <asp:CheckBox ID="CheckBox1" class="check formlog" type="checkbox" runat="server"/> Remember me
+                    <%--<button type="button" class="btn btn-primary formlog">Login</button>--%>
+                    
+        <asp:UpdatePanel id="UpdatePanel1" runat="server">
+            <ContentTemplate>
+            <fieldset style="border:none">
+                    <asp:LinkButton ID="btnloginmaster" class="btn btn-primary formlog" runat="server" OnClick="btnloginmaster_Click">Login</asp:LinkButton>
+                </fieldset>
+                <asp:Label ID="lblalertlogin" Visible="false" class="alert alert-danger" role="alert" Width="100%" runat="server" Text="Label"></asp:Label>
+            </ContentTemplate>
+            <%--<Triggers>            
+                <asp:PostBackTrigger ControlID="lblalertlogin" />
+            </Triggers>--%>
+        </asp:UpdatePanel>
+                </div>
+                <div class="forgot">
+                    <a href="forgotyourpassword.aspx">Forgot your password?</a>
+                </div>
+            </div>
+          </div>
+        </div>
+            
+
+        <div>
+
+        <asp:ContentPlaceHolder id="contenido" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+
+    <!--footer start from here-->
+    <footer>
+      <div class="container">
+        <div class="row">
+         <div class="col-md-3 col-sm-6 paddingtop-bottom">
+             <a href="../../../about-us"><h6 class="heading7">ABOUT US</h6></a>
+             <a href="../../../shipping-policy"><h6 class="heading7">SHIPPING POLICY</h6></a>
+             <a href="../../../about-alpaca"><h6 class="heading7">ABOUT ALPACA</h6></a>
+             <a href="../../../privacy-policy"><h6 class="heading7">PRIVACY POLICY</h6></a>
+             <a href="../../../faqs"><h6 class="heading7">FAQS</h6></a>
+          </div>
+          <div class="col-md-4 col-sm-6 footerleft ">
+              <asp:PlaceHolder ID="pldataartvus" runat="server"></asp:PlaceHolder>
+            <%--<div class="logofooter"> Artvus Alpaca</div>
+            <p class="description-company">We sell  alpaca products at wholesale prices such as alpaca hats, alpaca socks, alpaca toys and Alpaca Fur accessories, we work with more than 30 artisans all around Peru.
+We aim to show the art we have inherited from our grandparents and they have received from theirs</p>
+            <p><i class="fa fa-map-pin"></i> <span>3850 Woodside Blvd / Hailey, ID 83333 - USA</span></p>
+            <p><i class="fa fa-phone"></i> <span>Toll Free: 1(844)297-1291  or 1(208)928-6846</span></p>
+            <p><i class="fa fa-envelope"></i> <span>E-mail : info@artvus.com</span></p>--%>
+          </div>
+          <%--<div class="col-md-2 col-sm-6 paddingtop-bottom">
+            <h6 class="heading7">GENERAL LINKS</h6>
+            <ul class="footer-ul">
+              <li><a href="#"> New</a></li>
+              <li><a href="#"> Aptares</a></li>
+              <li><a href="#"> Socks</a></li>
+              <li><a href="#"> Accesories</a></li>
+              <li><a href="#"> Ranking</a></li>
+              <li><a href="#"> Toys</a></li>
+              <li><a href="#"> On Sale</a></li>
+            </ul>
+          </div>--%>
+          <%--<div class="col-md-3 col-sm-6 paddingtop-bottom">
+            <h6 class="heading7">LATEST POST</h6>
+            <div class="post">
+              <p>facebook crack the movie advertisment code:what it means for you <span>August 3,2015</span></p>
+              <p>facebook crack the movie advertisment code:what it means for you <span>August 3,2015</span></p>
+              <p>facebook crack the movie advertisment code:what it means for you <span>August 3,2015</span></p>
+            </div>
+          </div>--%>
+          <%--<div class="col-md-3 col-sm-6 paddingtop-bottom">
+            <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-height="300" data-small-header="false" style="margin-bottom:15px;" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+              <div class="fb-xfbml-parse-ignore">
+                <blockquote cite="https://www.facebook.com/facebook"><a href="#">Facebook</a></blockquote>
+              </div>
+            </div>
+          </div>--%>
+            <div class="col-md-4 col-sm-6 paddingtop-bottom" role="form">
+                <div class="logofooter"> Contact Us</div>
+                <asp:UpdatePanel id="UpdatePanel2" runat="server">
+                    <ContentTemplate>
+                        <div class="row form-group">
+                            <div class="col-md-2">
+                                <label class="lblcontact">Name</label>
+                            </div>
+                            <div class="col-md-10">
+                                <asp:TextBox ID="txtname" placeholder="Full name (Required)" class="form-control" runat="server"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-2">
+                                <label class="lblcontact">Email</label>
+                            </div>
+                            <div class="col-md-10">
+                                <asp:TextBox ID="txtemail" placeholder="your@email.com (Required)" type="email" class="form-control" runat="server"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-2">
+                                <label class="lblcontact">Message</label>
+                            </div>
+                            <div class="col-md-10">
+                                <asp:TextBox ID="txtmessage" TextMode="MultiLine" Rows="3" class="form-control" placeholder="Your message (Required)" runat="server"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-2">
+                            </div>
+                            <div class="col-md-10">
+                        
+                                <fieldset style="border:none;position:relative">
+                                    <asp:LinkButton ID="btnsendmessage" class="btn btn-default lblcontact" runat="server" OnClick="btnsendmessage_Click">Send</asp:LinkButton>
+                                    <asp:UpdateProgress ID="UpdateProgress1"  runat="server">
+                                        <ProgressTemplate>
+                                            <img style="position:absolute; left:4.5em;top:0" src="../../../img/load-small.gif" alt="" />
+                                        </ProgressTemplate>
+                                    </asp:UpdateProgress>
+                                </fieldset>
+                                <asp:Label ID="lblmessagesend" Visible="false" class="alert alert-danger" role="alert" Width="100%" runat="server" Text="Label"></asp:Label>
+                            
+                            </div>
+                        </div>
+                    </ContentTemplate> 
+                </asp:UpdatePanel>
+                
+            </div>
+
+
+        </div>
+      </div>
+    </footer>
+    <!--footer start from here-->
+
+    <div class="copyright">
+      <div class="container">
+        <div class="col-md-6">
+          <p>© 2017 - All Rights with <span>Artvus</span></p>
+        </div>
+        <div class="col-md-6">
+          <ul class="bottom_ul">
+            <%--<li><a href="#"><img src="../../../img/comodo_secure_113x59_transp.png" alt="Comodo SSL" /></a></li>--%>
+            
+            <li><img src="../../../img/icon-credit-card/visa.svg" class="image-card" alt="Visa" title="Visa" /></li>
+            <li><img src="../../../img/icon-credit-card/mastercard.svg" class="image-card" alt="Master Card" title="Master Card" /></li>
+            <%--<li><img src="../../../img/icon-credit-card/amex.svg" class="image-card" alt="American Express" title="American Express" /></li>--%>
+            <li><img src="../../../img/icon-credit-card/diners.svg" class="image-card" alt="Diners Club" title="Diners Club" /></li>
+            <%--<li><img src="../../../img/icon-credit-card/discover.svg" class="image-card" alt="Discover" title="Discover" /></li>--%>
+            <li><img src="../../../img/icon-credit-card/jcb.svg" class="image-card" alt="JCB" title="JCB" /></li>
+            <li>
+                <a href="https://ssl.comodo.com">
+                    <span style="font-weight:bold; font-size:7pt">SSL</span>
+                    <img src="https://ssl.comodo.com/images/comodo_secure_seal_76x26_transp.png" alt="SSL" width="76" height="26" style="border: 0px;" />
+                </a>
+            </li>
+            <li>
+                <div class="AuthorizeNetSeal" style="float:right">
+                    <script type="text/javascript" language="javascript">var ANS_customer_id="05d0352a-dfc9-4389-8bf3-ba81168542bb";</script>
+                    <script type="text/javascript" language="javascript" src="//verify.authorize.net/anetseal/seal.js" ></script>
+                    <%--<a href="http://www.authorize.net/" id="AuthorizeNetText" target="_blank">Online Payments</a>--%>
+                </div>
+            </li>
+            <%--<li><a href="#">About us</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Faq's</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Site Map</a></li>--%>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    </form>
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="../../../js/bootstrap.js"></script>
+    <script>
+        $('ul.navigation li.dropdown').hover(function () {
+            $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+        }, function () {
+            $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+        });
+    </script>
+    <script>
+        //$(".dropdown").click(function () {
+        //    //Hacer algo
+        //    return true;
+        //});
+    </script>
+    <script>
+        function showcart() {
+            document.getElementById('detailcart-js').style.display = "block";
+            document.getElementById('detailcart-js').style.opacity = "1";
+        }
+        function hidecart() {
+            document.getElementById('detailcart-js').style.display = "none";
+            document.getElementById('detailcart-js').style.opacity = "0";
+        }
+        function showsetting() {
+            document.getElementById('setting').style.display = "block";
+            document.getElementById('setting').style.opacity = "1";
+        }
+        function hidesetting() {
+            document.getElementById('setting').style.display = "none";
+            document.getElementById('setting').style.opacity = "0";
+        }
+        //$("#cart-js").hover(function () {
+        //    $('#detailcart-js').fadeOut(100);
+        //    $('#detailcart-js').fadeIn(500);
+        //});
+
+        //$(".selector").hover(function () {
+        //    // cogemos el id del li por el que estamos pasando por encima
+        //    var id = $(this).attr("id");
+        //    // mostramos el div que tiene una clase que se llama como el id
+        //    $("." + id).show();
+        //}, function () {
+        //    // esta función se ejecuta cuando pierde el foco
+
+        //    var id = $(this).attr("id");
+        //    $("." + id).hide();
+        //})
+        var clic = 1;
+        function divLogin() {
+            if (clic == 1) {
+                document.getElementById('setting').style.display = "block";
+                document.getElementById('setting').style.opacity = "1";
+                clic = clic + 1;
+            } else {
+                document.getElementById('setting').style.display = "none";
+                document.getElementById('setting').style.opacity = "0";
+                clic = 1;
+            }
+        }
+        function divLoginMobile() {
+            if (clic == 1) {
+                document.getElementById('settingmobile').style.display = "block";
+                document.getElementById('settingmobile').style.opacity = "1";
+                clic = clic + 1;
+            } else {
+                document.getElementById('settingmobile').style.display = "none";
+                document.getElementById('settingmobile').style.opacity = "0";
+                clic = 1;
+            }
+        }
+        function divSearch(idelement) {
+            if (clic == 1) {
+                document.getElementById('globalsearch').style.display = "block";
+                document.getElementById('globalsearch').style.opacity = "1";
+                clic = clic + 1;
+
+                document.getElementById(idelement).focus();
+            } else {
+                document.getElementById('globalsearch').style.display = "none";
+                document.getElementById('globalsearch').style.opacity = "0";
+                clic = 1;
+            }
+        }
+    </script>
+    <script>
+        // focus nameuser inside modal
+        $('#myModal').on('shown.bs.modal', function () {
+            $('#txtusername').focus()
+        })
+    </script>
+    <script>
+        function button_click(objTextBox,objBtnID)
+        {
+            if(window.event.keyCode==13)
+            {
+                document.getElementById(objBtnID).focus();
+                document.getElementById(objBtnID).click();
+            }
+        }
+    </script>
+    <asp:ContentPlaceHolder id="script" runat="server">
+      
+    </asp:ContentPlaceHolder>
+</body>
+</html>
